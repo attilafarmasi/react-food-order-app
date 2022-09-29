@@ -14,7 +14,11 @@ const CartProvider = (props) => {
     removeItem: removeItemFromCartHandler,
   };
 
-  return <CartContext value={cartContext}>{props.children}</CartContext>;
+  return (
+    <CartContext.Provider value={cartContext}>
+      {props.children}
+    </CartContext.Provider>
+  );
 };
 
 export default CartProvider;
